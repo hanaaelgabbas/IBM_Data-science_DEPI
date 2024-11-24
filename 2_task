@@ -1,0 +1,128 @@
+2.1
+
+# Creating a list of 10 integers ranging from 1 to 20
+numbers = [1, 2, 3, 5, 7, 11, 8, 18, 14, 16, 4]
+
+# Extracting and printing the first 5 elements
+first_five = numbers[:5]
+print("First 5 elements:", first_five)
+
+# Extracting and printing the last 3 elements using negative indexing
+last_three = numbers[-3:]
+print("Last 3 elements:", last_three)
+
+# Extracting and printing all elements from index 3 to index 7
+middle_elements = numbers[3:8]
+print("Elements from index 3 to index 7:", middle_elements)
+
+2.2
+fruits = ["Apple", "watermellon", "Banana", "beach", "Orange"]
+fruits.append("Pineapple")
+fruits.append("Strawberry")
+fruits.pop()
+print("Updated list of fruits:", fruits)
+
+2.3
+cities = ("london", "cairo", "Tokyo", "amman", "new york")
+
+print("Second city in the tuple:", cities[1])
+
+try:
+    cities[1] = "Berlin"  
+except TypeError as e:
+    print("Error:", e)
+
+2.4
+
+person = {'name': 'hanaa', 'age': 20, 'city': 'giza'}
+
+print("Age:", person['age'])
+
+person['job'] = 'Engineer'
+
+person.pop('city')
+
+print("Updated dictionary:", person)
+
+2.5
+# Creating a dictionary to store names and ages of 3 people
+people = {
+    "ahmed": 20,
+    "ali": 22,
+    "omer": 25
+    }
+for name, age in people.items():
+    print(f"{name} is {age} years old.")
+
+2.6
+
+# Taking the user's age as input
+age = int(input("Enter your age: "))
+
+# Checking if the user is an adult or a minor
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+2.7
+number = int(input("Enter a number: "))
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+2.8
+
+score = int(input("Enter the score: "))
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 70:
+    print("Grade: B")
+elif score >= 50:
+    print("Grade: C")
+else:
+    print("Grade: F")
+
+2.9
+# Using a for loop to print all even numbers between 1 and 20
+for number in range(1, 21):
+    if number % 2 == 0:
+        print(number)
+
+2.10
+number = 10
+while number >= 1:
+    print(number)
+    number -= 1
+
+2.11
+n = int(input("Enter a number: "))
+
+total_result = 0
+
+for i in range(1, n + 1):
+    total_result += i
+
+print("The sum of all numbers from 1 to", n, "is:", total_result)
+
+2.12
+# Asking the user for their name
+name = input("What is your name? ")
+
+# Asking the user for their age
+age = int(input("How old are you? "))
+
+# Printing the message
+print(f"Hello, {name}! You are {age} years old.")
+
+2.13
+favorite_color = input("What is your favorite color? ").lower()
+
+if favorite_color == 'blue':
+    print("You have great taste!")
+else:
+    print("That's a nice color too!")
+
