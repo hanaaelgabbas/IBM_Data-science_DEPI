@@ -1,0 +1,37 @@
+3.1
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    
+    count = 0
+    
+    for char in s:
+    
+        if char in vowels:
+            count += 1
+    
+    return count
+    
+string = input("Enter a string: ")
+print("Number of vowels:", count_vowels(string))
+
+3.2
+def find_max(lst):
+    if not lst:
+        return None
+    
+    max_value = lst[0]
+    
+    for num in lst:
+        if num > max_value:
+            max_value = num
+    
+    return max_value
+
+
+numbers = [10, 20, 4, 45, 34]
+print("The maximum value is:", find_max(numbers))
+
+empty_list = []
+print("The maximum value in the empty list is:", find_max(empty_list))
+
+
