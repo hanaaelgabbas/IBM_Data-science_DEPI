@@ -1,0 +1,65 @@
+CREATE TABLE employees(
+	emp_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	salary NUMERIC(10,2) NOT NULL,
+	manager_id INT,
+	department_id INT
+);
+
+INSERT INTO employees (first_name,last_name, salary, manager_id,department_id) VALUES
+('ahmed','Mohammed', 4570, 100,1),
+('ali','omar',3000, 101,2),
+('Mostafa','amr',5890,122,3),
+('mohmmed','ali',3490,107,2),
+('ahmed','mahmoud',3500,102,1),
+('ziad','wael',7800,122,4),
+('yousef','marwan',10000,123,2),
+('khaled','mohmmed',3900,100,1),
+('waleed','hany',6800,102,2);
+
+
+INSERT INTO employees (first_name,last_name, salary, manager_id,department_id) VALUES
+('omar', 'mohmed',3000, 134,3),
+('ramy','ahmed',6780, 119,4),
+('hanaa','mahmoud',12900, 111,3),
+('maher','Ahmed',12300, 123,4),
+('ashrf','khaled',7900, 102,4);
+
+-- Task 1
+SELECT 
+	emp_id,
+	last_name,
+	salary
+FROM employees
+WHERE salary BETWEEN 3000 AND 12000
+AND employees.manager_id NOT IN (100,200);
+
+CREATE TABLE department(
+	department_id SERIAL PRIMARY KEY,
+	dep_name VARCHAR(40) NOT NULL
+);
+
+INSERT INTO department (dep_name) VALUES
+('Marketing'),
+('Human Resources'),
+('Finance'),
+('Engineering');
+
+
+-- Task 2
+SELECT 
+	e.first_name AS first_name,
+	d.dep_name AS department_name
+FROM employees e
+JOIN department d ON e.department_id = d.department_id
+ORDER BY d.dep_name;
+
+
+-- Task 3
+SELECT 
+	department_id,
+	COUNT(emp_id) AS num_of_employees,
+	AVG(salary) AS average_salary
+FROM employees
+GROUP BY department_id;
